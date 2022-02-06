@@ -1,389 +1,141 @@
-# POSTtmanHW
+# POSTMANWH
 
-Адрес, на который посылаются сообщения называется Endpoint.
 
-API  взаимодействие с сервером приложения на смартфоне, между  другими хостами
+ --! список пользователей просмотеть
+1) click new
+2) select HTTP Request
+3) select  method GET
+4) fill in URL https://reqres.in/api/users?page=2
+5) click button "send"
+Respons code:200
+ 
+ 
+
+
+
+{
+    "page": 2,
+    "per_page": 6,
+    "total": 12,
+    "total_pages": 2,
+    "data": [
+        {
+            "id": 7,
+            "email": "michael.lawson@reqres.in",
+            "first_name": "Michael",
+            "last_name": "Lawson",
+            "avatar": "https://reqres.in/img/faces/7-image.jpg"
+        },
+        {
+            "id": 8,
+            "email": "lindsay.ferguson@reqres.in",
+            "first_name": "Lindsay",
+            "last_name": "Ferguson",
+            "avatar": "https://reqres.in/img/faces/8-image.jpg"
+        },
+        {
+            "id": 9,
+            "email": "tobias.funke@reqres.in",
+            "first_name": "Tobias",
+            "last_name": "Funke",
+            "avatar": "https://reqres.in/img/faces/9-image.jpg"
+        },
+        {
+            "id": 10,
+            "email": "byron.fields@reqres.in",
+            "first_name": "Byron",
+            "last_name": "Fields",
+            "avatar": "https://reqres.in/img/faces/10-image.jpg"
+        },
+        {
+            "id": 11,
+            "email": "george.edwards@reqres.in",
+            "first_name": "George",
+            "last_name": "Edwards",
+            "avatar": "https://reqres.in/img/faces/11-image.jpg"
+        },
+        {
+            "id": 12,
+            "email": "rachel.howell@reqres.in",
+            "first_name": "Rachel",
+            "last_name": "Howell",
+            "avatar": "https://reqres.in/img/faces/12-image.jpg"
+        }
+    ],
+    "support": {
+        "url": "https://reqres.in/#support-heading",
+        "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+    }
+}
+
+ 
 
 -----------------------------------------------------------------------------
-1)  проверить работу следующего API.
-  GET http://www.answerit.ru
-  Response:   200 OK
-  
-   
-  
-  <!DOCTYPE html>
-<html lang="ru">
+--! создать пользователя post запросом
+1)click new
+2) select HTTP Request
+3) select POST
+4) fill in URL  https://reqres.in//api/users
+5) click Body 
+6) select in Body options "raw"
+7) celect JSON format
+8) fill field
+ {
+    "name": "morpheus",
+    "job": "leader"
+}
+9) click button "send"
 
-<head>
-	<!-- devhops -->
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7881721879502382"
-		crossorigin="anonymous"></script>
-	<!-- /devhops -->
-	<title>DevHOps.ru</title>
-	<meta name="keywords"
-		content="LaTeX, Excel, цветной выпадающий список,go,golang, Rocky Linux, CentOS Linux, Debian Linux, c, c++, php, JavaScript, python, тестирование, тестирование API, python selenium, тестирование ПО, тестирование python, диагностика травм мениска, шкала Хаунсфилда, системное администрирование, RDP через SSH туннель, бесплатные программы, запись образов с помощью UltraISO, ядерная физика, кафедра ядерной физики СПбГУ, ВВЭР, ВВЭР 1000, ядерные реакторы, ядерный реактор, PWR,">
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<meta name="description"
-		content="Персональный сайт об IT: верстке в LaTeX, использовании Debian Linux, о софте, тестировании ПО, физике, математике, ядерной энергетике, литературе,баскетболе и здоровом образе жизни">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta property="og:image" content="https://www.devhops.ru/img/ao_feed_square.png">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="/.css/devhops.css">
-	<link rel="icon" type="image/png" href="/favicon.png" />
-	<!-- for eth -->
-	<meta name="verify-admitad" content="f948dd7e1a" />
-</head>
+Response  code 201
 
-<body>
+{
+    "name": "morpheus",
+    "job": "leader",
+    "id": "913",
+    "createdAt": "2022-02-06T11:24:57.950Z"
+}
+----------------------------------------------------------------------------
 
-	<aside class="rightbanner" id="left_block">
-		<div class="w100">
-			<a href="https://beget.com/?id=3421"
-				target="_blank"><img class="w100" src="https://cp.beget.com/promo_data/static/static300x1050_1.png" border="0"></a>
-		</div>
-	</aside>
+--! Зарегистрироватся успешный кейс
+1) click new
+2) select HTTP Request
+3) select POST
+4) fill in URL https://reqres.in/api/register
+5) click Body 
+6) select in Body options "raw"
+7) celect JSON format
+8) fill field 
+{
+    "email": "eve.holt@reqres.in",
+    "password": "pistol"
+}
+9) click button "send"
 
-	<div id="container">
-		<div id="start"></div>
-		<main class="wrapper mt2">
-			<div id="ya-site-results"
-				onclick="return{'tld': 'ru','language': 'ru','encoding': '','htmlcss': '1.x','updatehash': true}"></div>
-			<script>
-				"(function(w,d,c){var s=d.createElement('script'),h=d.getElementsByTagName('script')[0];s.type='text/javascript';s.async=true;s.charset='utf-8';s.src=(d.location.protocol==='https:'?'https:':'http:')+'//site.yandex.net/v2.0/js/all.js';h.parentNode.insertBefore(s,h);(w[c]||(w[c]=[])).push(function(){Ya.Site.Results.init();})})(window,document,'yandex_site_callbacks');
-			</script>
+Response: code 200
 
-			<div class="font-size0 border-box padding0">
-				<div class="homeBlock">
-					<a class="topic" href="/linux/">Linux</a>
-					<a href="/linux/debian/">Debian</a>
-					<a href="/linux/ubuntu/">Ubuntu</a>
-					<a href="/linux/rocky/">Rocky</a>
-					<a href="/linux/centos/">CentOS</a>
-					<a href="/linux/faq/">FAQ</a>
-					<a href="/linux/network/">Настройка сети</a>
-					<a href="/linux/linux_mount.php">Как прочитать с флешки</a>
-					<a href="/linux/configure_make_install.php">Configure make install</a>
-					<a href="/linux/android_to_linux.php">Подключение смартфона</a>
-				</div>
-				<div class="homeBlock">
-					<a class="topic" href="/code/">Программирование</a>
-					<a href="/linux/bash/scripting.php">Bash</a>
-					<a href="/code/c/">C</a>
-					<a href="/code/cpp/">C&plus;&plus;</a>
-					<a href="/code/go/">Go</a>
-					<a href="/code/php/">PHP</a>
-					<a href="/code/python/">Python</a>
-					<a href="/code/ruby/">Ruby</a>
-					<a href="/code/java/">Java</a>
-					<a href="/code/js/">JavaScript</a>
-				</div>
-				<div class="homeBlock">
-					<a class="topic" href="/testing/">Тестирование ПО</a>
-					<a href="/testing/jira/">Jira</a>
-					<a href="/testing/api_testing.php">Тестирование API</a>
-					<a href="/testing/lessons/">Мой учебник по тестированию</a>
-					<a href="/i/soap_ui/">SOAP UI</a>
-					<a href="/testing/bash_for_tester.php">Bash для тестировщика</a>
-					<a href="/testing/clumsy.php">Clumsy 0.2</a>
-					<a href="/testing/wireshark.php">Wireshark</a>
-					<a href="/testing/nmap.php">Nmap</a>
-					<a href="/testing/theory/">Теория</a>
-				</div>
-				<div class="homeBlock">
-					<a class="topic" href="/testing/automation.php">Test Automation</a>
-					<a href="/testing/robot/">Robot Framework</a>
-					<a href="/i/selenium/">Selenium</a>
-					<a href="/i/selenium_python/">Selenium &plus; Python</a>
-					<a href="/i/selenium_java/">Selenium &plus; Java</a>
-					<a href="/i/junit/">JUnit</a>
-					<a href="/i/jmeter/">JMeter</a>
-					<a href="/i/locust/">Locust</a>
-					<a href="/testing/netdata/">netdata</a>
-				</div>
-				<div class="homeBlock">
-					<a class="topic" href="/i/devops/">DevOps</a>
-					<a href="/i/networks/">Сети</a>
-					<a href="/linux/bash/">Bash</a>
-					<a href="/i/aws/">AWS</a>
-					<a href="/i/git/">GIT</a>
-					<a href="/i/maven/">Maven</a>
-					<a href="/i/docker/">Docker</a>
-					<a href="/i/k8s/">K8s</a>
-					<a href="/i/virtualbox/">
-						VirtualBox
-					</a>
-					<a href="/i/postgres/">
-						PostgreSQL
-					</a>
-					<a href="/i/openstack/">
-						OpenStack
-					</a>
-				</div>
-				<div class="homeBlock">
-					<a class="topic" href="/i/cybersecurity/">
-						ИБ
-					</a>
-					<a href="/i/cybersecurity/dict.php">
-						Словарь
-					</a>
-					<a href="/i/cybersecurity/oauth.php">
-						OAuth
-					</a>
-					<a href="/i/cybersecurity/auth.php">
-						Auth
-					</a>
-				</div>
+{
+    "id": 4,
+    "token": "QpwL5tke4Pnpja7X4"
+}
+--------------------------------------------
+--! пройти автроизацию
+1) click new
+2) select HTTP Request
+3) select POST
+4) fill in URL hthttps://reqres.in/api/login
+5) click Body 
+6) select in Body options "raw"
+7) celect JSON format
+8) fill field 
+{
+    "email": "eve.holt@reqres.in",
+    "password": "cityslicka"
+}
+9) click button "send"
+Respone :code 200
 
-				<div class="homeBlock">
-					<a class="topic" href="/PC/web/">Web</a>
-					<a href="/i/html/">HTML</a>
-					<a href="/i/css/">CSS</a>
-					<a href="/PC/web/joomla.php">Joomla</a>
-					<a href="/PC/web/redirect.php">Redirect .htaccess</a>
-					<a href="/PC/web/urlencode.php">Urlencode</a>
-					<a href="/PC/web/firefox.php">Firefox</a>
-					<a href="/PC/web/ru_ip.php">Российские IP</a>
-					<a href="/PC/web/hosting.php">Какой выбрать хостинг</a>
-				</div>
-				<div class="homeBlock">
-					<a class="topic" href="/PC/web/">WebDev</a>
-					<a href="/i/nodejs/">Node.js</a>
-					<a href="/i/npm/">NPM</a>
-					<a href="/i/gulp/">Gulp</a>
-					<a href="/i/flask/">Flask</a>
-					<a href="/PC/django/">Django</a>
-				</div>
-				<div class="homeBlock">
-					<a class="topic" href="/i/windows/">Windows</a>
-					<a href="/i/windows/loudness_equalization.php">Loudness Equalization</a>
-					<a href="/i/windows/powershell_tail.php">Аналог tail в PowerShell</a>
-					<a href="/i/windows/firewall.php">Windows Firewall</a>
-					<a href="/i/windows/drivers.php">Драйверы</a>
-					<a href="/i/windows/developer_win10.php">Режим разработчика в Windows 10</a>
-					<a href="/i/windows/bash_win10.php">BASH в Windows 10</a>
-					<a href="/i/windows/telnet/">Telnet</a>
-					<a href="/i/windows/path.php">Системная переменная PATH </a>
-				</div>
-				<div class="homeBlock">
-					<a class="topic" href="/PC/LaTeX/">LaTeX</a>
-					<a href="/PC/LaTeX.php">Самоучитель</a>
-					<a href="/latex/symbols/">Все символы LaTeX</a>
-					<a href="/PC/LaTeX/LaTeX_to_HTML.php">LaTeX в HTML</a>
-					<a href="/PC/LaTeX/LaTeX_titlepage.php">Титульный лист</a>
-					<a href="/PC/LaTeX/LaTeX_video.php">Видеоуроки</a>
-				</div>
-				<div class="homeBlock">
-					<a class="topic" href="/PC/ms_office/">MS Office</a>
-					<a href="/PC/ms_office/ms_excel/">Excel</a>
-					<a href="/PC/ms_office/ms_word/">Word</a>
-					<a href="/PC/ms_office/power_point/">Power Point</a>
-					<a href="/PC/ms_office/ms_excel/ms_excel_dropdown_with_colour.php">Цветной выпадающий список</a>
-					<a href="/PC/ms_office/ms_excel/ms_excel_filter.php">Фильтр в Excel</a>
-					<a href="/PC/ms_office/ms_excel/ms_excel_blackout.php">Всё пропало</a>
-					<a href="/PC/ms_office/ms_excel/ms_excel_new_line.php">Перенос строки</a>
-				</div>
-
-				<div class="homeBlock">
-					<a class="topic" href="/rfid/">RFID</a>
-					<a href="/rfid/rfid_basics.php">Основы</a>
-					<a href="/rfid/zpl/">ZPL</a>
-					<a href="/rfid/zpl/faq.php">ZPL FAQ</a>
-					<a href="/rfid/zpl/a_example.php">ZPL a</a>
-					<a href="/rfid/rfid_dictionary.php">Словарь</a>
-				</div>
-				<div class="homeBlock">
-					<a class="topic" href="/PC/it-helpdesk/">IT Helpdesk</a>
-					<a href="/PC/it-helpdesk/rdp_ssh_tunnel.php">RDP через SSH туннель </a>
-					<a href="/PC/it-helpdesk/ultraiso.php">Ultraiso</a>
-					<a href="/PC/it-helpdesk/script_to_autostart.php">Добавление скрипта в автозагрузку</a>
-				</div>
-			</div>
-		</main>
+{
+    "token": "QpwL5tke4Pnpja7X4"
+}
 
 
-		<aside class="rightbanner" id="right_block">
-			<div class="w100">
-				<a href="https://beget.com/?id=3421"
-					target="_blank"><img class="w100" src="https://cp.beget.com/promo_data/static/static300x1050_1.png" border="0"></a>
-			</div>
-		</aside>
-
-		<div class="count">
-			<!-- Yandex.Metrika counter -->
-			<script type="text/javascript">
-				(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(86097190, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });
-			</script><noscript>
-				<div>
-					<img src="https://mc.yandex.ru/watch/86097190" style="position:absolute; left:-9999px;" alt="" /></div>
-			</noscript><!-- /Yandex.Metrika counter -->
-			<!-- Yandex.Metrika counter -->
-			<script type="text/javascript">
-				(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(86097509, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); 
-			</script><noscript>
-				<div>
-					<img src="https://mc.yandex.ru/watch/86097509" style="position:absolute; left:-9999px;" alt="" /></div>
-			</noscript><!-- /Yandex.Metrika counter -->
-		</div>
-
-		<!-- RussianFooter -->
-		<div class="wrapper mt10">
-			<ul class="ul1 font1 w100 mt2">
-				<li>
-					<a id="website_search2" href="/search.php">
-						Поиск по сайту
-					</a>
-				</li>
-				<li>
-					<a href="https://t.me/aofeed">aofeed</a> - Telegram канал чтобы следить за выходом новых статей
-				</li>
-				<li>
-					<a href="https://t.me/aofeedchat">aofeedchat</a> - задать вопрос в Телеграм-группе
-				</li>
-			</ul>
-		</div>
-
-		<!-- RussianFooterModules -->
-		<div class="wrapper mt10">
-			<div class="banner-couple">
-				<div class="banner-container-box">
-					<div class="banner-container">
-						<div class="banner-img">
-							<a href="/testing/edu/?aofoot">
-								<picture>
-									<source type="image/webp"
-										srcset="/.php/_modules/img/cards//it/testing_edu_card.webp">
-									<source type="image/jpeg"
-										srcset="/.php/_modules/img/cards//it/testing_edu_card.jpg">
-									<img src="/it/testing_edu_card.jpg" class="w100"
-                            alt="Как стать тестировщиком изображение с сайта www.devhops.ru">
-                        </picture>
-							</a>
-							<div class="banner-img-hover-text banner-img-hover-text--centered">
-								<a href="/testing/edu/?aofoot">
-									На моём опыте
-								</a>
-							</div>
-						</div>
-						<div class="banner-bottom">
-							<div class="banner-text">
-								<a href="/testing/edu/?aofoot">
-									Где учиться тестированию
-								</a>
-							</div>
-							<div class="banner-additional-info">
-								<div class="banner-action-button">
-									<div class="banner-action-button-action">
-										<a class="banner-action-button-action-class" href="/testing/edu/?aofoot">
-											Бюджетно
-										</a>
-									</div>
-									<div class="banner-action-button-action">
-
-									</div>
-								</div>
-								<div class="banner-icons-block">
-									<div class="banner-icons-block-icon">
-									</div>
-									<div class="banner-icons-block-icon">
-										<a href="/">
-											<img class="banner-icon-block-flag" src="/.php/_modules/img/cards/default_icon.png" alt="Иконка">
-                                </a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="banner-container-box">
-					<div class="banner-container">
-						<div class="banner-img">
-							<a href="/PC/web/post_put.php?aofoot">
-								<picture>
-									<source type="image/webp" srcset="/.php/_modules/img/cards//it/post_put_card.webp">
-									<source type="image/jpeg" srcset="/.php/_modules/img/cards//it/post_put_card.jpg">
-									<img src="/it/post_put_card.jpg" class="w100"
-                            alt="Разница между POST и PUT изображение с сайта www.devhops.ru">
-                        </picture>
-							</a>
-							<div class="banner-img-hover-text banner-img-hover-text--centered">
-								<a href="/PC/web/post_put.php?aofoot">
-									Несколько версий
-								</a>
-							</div>
-						</div>
-						<div class="banner-bottom">
-							<div class="banner-text">
-								<a href="/PC/web/post_put.php?aofoot">
-									Разница между POST и PUT
-								</a>
-							</div>
-							<div class="banner-additional-info">
-								<div class="banner-action-button">
-									<div class="banner-action-button-action">
-										<a class="banner-action-button-action-class" href="/PC/web/post_put.php?aofoot">
-											HTTP REST
-										</a>
-									</div>
-									<div class="banner-action-button-action">
-
-									</div>
-								</div>
-								<div class="banner-icons-block">
-									<div class="banner-icons-block-icon">
-									</div>
-									<div class="banner-icons-block-icon">
-										<a href="/">
-											<img class="banner-icon-block-flag" src="/.php/_modules/img/cards/default_icon.png" alt="Иконка">
-                                </a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- rus foot 2 -->
-			</div>
-		</div>
-		<div class="wrapper mt2">
-			<table class="tab11">
-				<caption>Контакты и сотрудничество:</caption>
-				<tr>
-					<td>
-						Рекомендую наш хостинг <a href="https://www.beget.com/p3421">beget.ru</a>
-				<tr>
-					<td>
-						Пишите на
-						<span class="tt">info@urn.su</span> если Вы:
-				<tr>
-					<td>
-						1. Хотите написать статью для нашего сайта или перевести статью на свой родной язык.
-				<tr>
-					<td>
-						2. Хотите разместить на сайте рекламу, подходящуюю по тематике.
-				<tr>
-					<td>
-						3. Реклама на моём сайте имеет максимальный уровень цензуры. Если Вы увидели
-						рекламный блок недопустимый для просмотра детьми школьного возраста, вызывающий шок
-						или вводящий в заблуждение - пожалуйста свяжитесь с нами по электронной почте
-				<tr>
-					<td>
-						4. Нашли на сайте ошибку, неточности, баг и т.д.
-						<span class="width_a">.</span><span class="width_b">..</span>
-						<span class="width_c">...</span><span class="width_d">....</span>
-				<tr>
-					<td>
-						5. Статьи можно расшарить в соцсетях, нажав на иконку сети:
-						<script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
-						<script src="//yastatic.net/share2/share.js"></script>
-						<div class="ya-share2"
-							data-services="vkontakte,facebook,odnoklassniki,twitter,reddit,lj,viber,whatsapp,skype,telegram">
-						</div>
-			</table>
-		</div>
-
-		<div id="bottomid"></div>
-	</div>
-</body>
-
-</html>
